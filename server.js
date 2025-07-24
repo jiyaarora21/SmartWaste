@@ -14,6 +14,8 @@ const path = require('path');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'frontend')));
+
 const wasteRoutes = require('./routes/wasteRoutes');
 app.use('/api/waste', wasteRoutes);
 app.get('/', (req, res) => {
@@ -24,7 +26,7 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ MongoDB connected'))
     .catch((err) => console.error('❌ MongoDB connection failed:', err));
-app.use(express.static(path.join(__dirname, 'frontend')));
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
