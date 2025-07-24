@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
+
 
 // ... previous+ code
 
@@ -22,11 +24,9 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ MongoDB connected'))
     .catch((err) => console.error('❌ MongoDB connection failed:', err));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 const PORT = process.env.PORT || 5000;
-
-
-
 
 
 app.listen(PORT, () => {
