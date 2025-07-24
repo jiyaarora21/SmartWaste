@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  padding: 15px 30px;
+  background-color: #2E8B57; /* Deep blue */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #facc15; /* Soft yellow on hover */
+}
+
+/* Add spacing below navbar */
+body {
+  padding-top: 80px; /* To prevent form from hiding under fixed navbar */
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('./recycled.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 0;
+}
+
+
+/* Dark overlay over background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #2E8B57;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #2E8B57;
+  box-shadow: 0 0 5px rgba(46, 139, 87, 0.5);
+}
+
+button {
+  background-color: #2E8B57;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #246b46;
+}
+
+#responseMsg {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  input, select, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.status-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-left: 5px solid #4CAF50;
+    font-weight: bold;
+    display: none;
+}
+
+/* Admin container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  text-align: center;
+}
+
+/* Admin title */
+.container h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #0bdb62;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #0bdb62;
+  color: white;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Buttons & Dropdowns */
+button {
+  padding: 8px 14px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #dc2626;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f3f4f6;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  table, th, td {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 10px 8px;
+  }
+
+  button, select {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartWaste - Submit Request</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+      <div class="navbar-title">SmartWaste</div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track.html">Track</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>SmartWaste Request Form</h2>
+    <form id="wasteForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="address" placeholder="Your Address" required />
+      <select id="typeOfWaste" required>
+        <option value="">Select Waste Type</option>
+        <option value="Plastic">Plastic</option>
+        <option value="Organic">Organic</option>
+        <option value="E-waste">E-waste</option>
+      </select>
+      <button type="submit">Submit Request</button>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
