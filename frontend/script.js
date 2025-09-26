@@ -11,7 +11,7 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    const res = await fetch('http://localhost:5000/api/waste', {
+    const res = await fetch('/api/waste', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -27,4 +27,5 @@ form.addEventListener('submit', async (e) => {
     console.error(err);
   }
 });
+
 
