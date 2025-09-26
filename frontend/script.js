@@ -28,25 +28,3 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-async function trackRequest() {
-    const requestId = document.getElementById("requestIdInput").value.trim();
-    const statusDisplay = document.getElementById("statusDisplay");
-
-    if (!requestId) {
-        statusDisplay.style.display = 'block';
-        statusDisplay.innerText = "❗ Please enter a valid Request ID.";
-        return;
-    }
-
-    try {
-        const res = await fetch(`http://localhost:5000/api/waste/${requestId}`);
-        if (!res.ok) throw new Error("Request not found");
-        
-        const data = await res.json();
-        statusDisplay.style.display = 'block';
-        statusDisplay.innerText = `📦 Status: ${data.status}`;
-    } catch (err) {
-        statusDisplay.style.display = 'block';
-        statusDisplay.innerText = `❌ Error: ${err.message}`;
-    }
-}
