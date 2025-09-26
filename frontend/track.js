@@ -9,7 +9,7 @@ async function trackRequest() {
   }
 
   try {
-    const response = await fetch(`http://localhost:5000/api/waste/${requestId}`);
+    const response = await fetch(`/api/waste/${requestId}`);
     const data = await response.json();
 
     if (response.ok) {
@@ -24,3 +24,4 @@ async function trackRequest() {
     statusBox.innerText = 'An error occurred. Please try again later.';
   }
 }
+
