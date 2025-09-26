@@ -1,5 +1,5 @@
 // URL of your backend
-const API_URL = 'http://localhost:5000/api/waste';
+const API_URL = '/api/waste';
 
 // Fetch and display all waste requests on page load
 window.addEventListener('DOMContentLoaded', async () => {
@@ -75,3 +75,4 @@ async function deleteRequest(id) {
     console.error('Error deleting request:', error);
   }
 }
+
