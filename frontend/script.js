@@ -20,12 +20,13 @@ form.addEventListener('submit', async (e) => {
     });
 
     const result = await res.json();
-    responseMsg.textContent = "✅ Request submitted successfully!";
+    responseMsg.textContent = `✅ Request submitted successfully! Your Request ID is: ${result.requestId}`;
     form.reset();
   } catch (err) {
     responseMsg.textContent = "❌ Error submitting request.";
     console.error(err);
   }
 });
+
 
 
