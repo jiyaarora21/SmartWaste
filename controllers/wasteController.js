@@ -5,7 +5,10 @@ exports.createWasteRequest = async (req, res) => {
   try {
     const request = new WasteRequest(req.body);
     const savedRequest = await request.save();
-    res.status(201).json(savedRequest);
+    res.status(201).json({
+      message: "Request submitted successfully",
+      requestId: savedRequest._id,   // send only ID + message
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -57,3 +60,4 @@ exports.getWasteRequestById = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
